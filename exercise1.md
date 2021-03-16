@@ -1,4 +1,4 @@
-# Linting, testing and building (Python application)
+### Linting, testing and building (Python application)
 
 Some linters are combination of other tools used for logical or/and stylistic lint. Linting tool examples for Python:
 
@@ -17,7 +17,7 @@ Testing tools for Python:
 
 Python is an interpreted language, there is no need for a build step.
 
-# Setting up CI
+### Setting up CI
 
 Alternatives for setting up CI:
 
@@ -27,7 +27,7 @@ Alternatives for setting up CI:
 * TeamCity
 * Shippable
 
-# Self-hosted or a cloud-based environment?
+### Self-hosted or a cloud-based environment?
 
 Information needed to make the decision (for example): managing infrastructure, security and trust, integrations and expense.
 
