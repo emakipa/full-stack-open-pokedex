@@ -35,3 +35,4 @@ jobs:
           heroku_email: 'esa.makipaa@gmail.com'
           healthcheck: 'https://fs-open-pokedex.herokuapp.com/health'
           checkstring: 'ok'
+          rollbackonhealthcheckfailed: true
