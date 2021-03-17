@@ -29,6 +29,15 @@ Alternatives for setting up CI:
 
 ### Self-hosted or a cloud-based environment?
 
-Information needed to make the decision (for example): managing infrastructure, security and trust, integrations and expense.
+Information needed to make the decision (for example): 
+
+* managing infrastructure
+  - CI/CD systems require resources and the health of the services has to be maintained
+* security and trust
+  - focus on the security of CI/CD systems in needed. Trust in the external provider needs to evaluated
+* integrations
+  - how easily different solutions integrate with other tools or systems that are used
+* expense
+- price of managed CI/CD and self-hosted service
 
 In general, for a small to medium software project not having any special requirements, a cloud-based solution is probably more suitable. There is no need for setting up your own system and it should be cheaper for smaller projects. Larger projects usually need resources and in larger companies there may be many projects taking advantage of it. Then a self-hosted CI setup is probably the choice.
