@@ -27,7 +27,7 @@ Alternatives for setting up CI:
 * TeamCity
 * Shippable
 
-### Self-hosted or a cloud-based environment?
+### Self-hosted or a cloud-based environment
 
 Information needed to make the decision (for example): 
 
