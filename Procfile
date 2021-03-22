@@ -1,1 +1,1 @@
-web: wrong start command
+web: npm run start-prod
