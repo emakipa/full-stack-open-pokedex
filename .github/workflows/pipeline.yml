@@ -47,3 +47,33 @@ jobs:
           healthcheck: 'https://fs-open-pokedex.herokuapp.com/health'
           checkstring: 'ok'
           rollbackonhealthcheckfailed: true
+      - name:  slack success notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: commit,author,took
+          custom_payload: |
+            {
+              attachments: [{
+                color: 'good',
+                text: `A new version deployed to https://fs-open-pokedex.herokuapp.com/ (${process.env.AS_COMMIT}) by ${process.env.AS_AUTHOR}, status: ${{ job.status }}, build took ${process.env.AS_TOOK}.`,
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ', '), '#skip') && success() }}
+      - name:  slack failure notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,commit,eventName,message,author,took
+          custom_payload: |
+            {
+              attachments: [{
+                color: 'danger',
+                text: 'Build failure',
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ', '), '#skip') && failure() }}   
